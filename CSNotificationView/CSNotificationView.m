@@ -26,6 +26,7 @@ static NSString * kCSNavigationBarBoundsKeyPath = @"bounds";
 @property (nonatomic, weak) UINavigationController* parentNavigationController;
 @property (nonatomic, getter = isVisible) BOOL visible;
 
+
 #pragma mark - content views
 @property (nonatomic, strong, readonly) UIView* symbolView; // is updated by -(void)updateSymbolView
 @property (nonatomic, strong) UILabel* textLabel;
@@ -379,12 +380,29 @@ static NSString * kCSNavigationBarBoundsKeyPath = @"bounds";
     }];
 }
 
+- (UIModalPresentationStyle)parentPresentationStyle:(UIViewController *) viewController {
+	UIModalPresentationStyle style;
+	
+	style = viewController.modalPresentationStyle;
+	
+	if (style == UIModalPresentationCurrentContext) {
+		style = [self parentPresentationStyle:viewController.presentingViewController];
+	}
+	
+	return style;
+}
+
 #pragma mark - frame calculation
 
 //Workaround as there is a bug: sometimes, when accessing topLayoutGuide, it will render contentSize of UITableViewControllers to be {0, 0}
 - (CGFloat)topLayoutGuideLengthCalculation
 {
-    CGFloat top = MIN([UIApplication sharedApplication].statusBarFrame.size.height, [UIApplication sharedApplication].statusBarFrame.size.width);
+	UIModalPresentationStyle style = [self parentPresentationStyle:self.parentNavigationController];
+	CGFloat top = 0;
+	
+	if (style == UIModalPresentationFullScreen) {
+		top = MIN([UIApplication sharedApplication].statusBarFrame.size.height, [UIApplication sharedApplication].statusBarFrame.size.width);
+	}
     
     if (self.parentNavigationController && !self.parentNavigationController.navigationBarHidden) {
         
