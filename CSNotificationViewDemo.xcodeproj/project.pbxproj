@@ -19,6 +19,7 @@
 		8E757B5017D38D360088845B /* CSNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E757B4D17D38CA20088845B /* CSNotificationView.m */; };
 		8E757B5117D38F6B0088845B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E757B4F17D38CE80088845B /* Images.xcassets */; };
 		8E757B5217D38F6F0088845B /* CSNotificationView.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E757B4E17D38CBF0088845B /* CSNotificationView.xcassets */; };
+		94D719BA1951D6A000A15D13 /* Storyboard-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94D719B91951D6A000A15D13 /* Storyboard-iPad.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		8E757B4D17D38CA20088845B /* CSNotificationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSNotificationView.m; sourceTree = "<group>"; };
 		8E757B4E17D38CBF0088845B /* CSNotificationView.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CSNotificationView.xcassets; sourceTree = "<group>"; };
 		8E757B4F17D38CE80088845B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		94D719B91951D6A000A15D13 /* Storyboard-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Storyboard-iPad.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		8E4E1AB817D35355005EB12B /* CSNotificationViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				94D719B61951D5B300A15D13 /* iPad */,
 				8E4E1AC117D35355005EB12B /* CSAppDelegate.h */,
 				8E4E1AC217D35355005EB12B /* CSAppDelegate.m */,
 				8E4E1AE517D353F3005EB12B /* CSRootViewController.h */,
@@ -122,6 +125,14 @@
 				8E757B4E17D38CBF0088845B /* CSNotificationView.xcassets */,
 			);
 			path = CSNotificationView;
+			sourceTree = "<group>";
+		};
+		94D719B61951D5B300A15D13 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				94D719B91951D6A000A15D13 /* Storyboard-iPad.storyboard */,
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +190,7 @@
 				8E757B5217D38F6F0088845B /* CSNotificationView.xcassets in Resources */,
 				8E757B5117D38F6B0088845B /* Images.xcassets in Resources */,
 				8E4E1ABD17D35355005EB12B /* InfoPlist.strings in Resources */,
+				94D719BA1951D6A000A15D13 /* Storyboard-iPad.storyboard in Resources */,
 				8E4E1AEF17D35DBD005EB12B /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,7 +300,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CSNotificationViewDemo/CSNotificationViewDemo-Prefix.pch";
 				INFOPLIST_FILE = "CSNotificationViewDemo/CSNotificationViewDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = CSNotificationViewDemo;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -301,7 +315,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CSNotificationViewDemo/CSNotificationViewDemo-Prefix.pch";
 				INFOPLIST_FILE = "CSNotificationViewDemo/CSNotificationViewDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = CSNotificationViewDemo;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
