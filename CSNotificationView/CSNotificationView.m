@@ -451,7 +451,10 @@ static NSString * kCSNavigationBarBoundsKeyPath = @"bounds";
 	UIModalPresentationStyle style = [self parentPresentationStyle:self.parentNavigationController];
 	CGFloat top = 0;
 	
-	if (style == UIModalPresentationFullScreen) {
+	//check to see if the nav is popover
+	UIPopoverController *popopverController = [self.parentNavigationController performSelector:@selector(_popoverController)];
+	
+	if (style == UIModalPresentationFullScreen && popopverController == nil) {
 		top = MIN([UIApplication sharedApplication].statusBarFrame.size.height, [UIApplication sharedApplication].statusBarFrame.size.width);
 	}
     
